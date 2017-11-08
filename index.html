@@ -7,6 +7,109 @@
     <title>Chatbot test, vinicius</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <style type="text/css">
+        #chatbot {
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+    height: 300px;
+    width: 250px;
+    background: #fafafa;
+    box-shadow: -1px -1px 1px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    &.minimized {
+        bottom: -270px;
+        .title {
+            cursor: pointer;
+            .close {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    .title {
+        width: 100%;
+        background:rgb(47, 84, 195);
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        .close {
+            position: absolute;
+            right: 5px;
+            top: 3px;
+            transition: all 0.3s;
+        }
+    }
+
+    #chatbot-messages {
+        height: calc(~"100% - 30px");
+        width: 100%;
+        overflow: scroll;
+        .message {
+            font-size: 12px;
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            line-height: 1.5em;
+            button, input {
+                display: block;
+                clear: both;
+                margin-top: 5px;
+                &.error {
+                    background: rgb(240, 66, 66);
+                    color: #fff;
+                }
+            }
+
+            button {
+                background: #3498db;
+                background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+                background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+                background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+                background-image: -o-linear-gradient(top, #3498db, #2980b9);
+                background-image: linear-gradient(to bottom, #3498db, #2980b9);
+                border-radius: 4px;
+                border: none;
+                color: #ffffff;
+                font-size: 13px;
+                padding: 4px 8px 4px 8px;
+                display: block;
+                text-decoration: none;
+            }
+
+            button:hover {
+                background: #3cb0fd;
+                background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+                text-decoration: none;
+            }
+
+            &:not(:last-child) {
+                color: #888;
+                background: #eee;
+                button {
+                    background: #888;
+                    cursor: default;
+                }
+            }
+
+        }
+        .author {
+            font-weight: 700;
+            color: #666;
+        }
+    }
+}
+    </style>
+
     <link rel="stylesheet/less" type="text/css" href="css/style.less" >
     <script type="text/javascript" src="js/vue.min.js"></script>
     <script type="text/javascript" src="js/estado-chatbot.js"></script>
